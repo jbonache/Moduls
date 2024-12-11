@@ -18,7 +18,6 @@ class Player(models.Model):
         # Obtener la ruta del archivo utilizando get_module_resource
         image_path = get_module_resource('galactic_tribals', 'static/src/img/avatar_default.png')
         try:
-            print('ffffff')
             with open(image_path, 'rb') as image_file:
                 return base64.b64encode(image_file.read())
         except FileNotFoundError:

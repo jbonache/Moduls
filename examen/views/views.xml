@@ -1,0 +1,141 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="examen.furgoneta">
+            <field name="name">Examen Furgoneta List</field>
+            <field name="model">examen.furgoneta</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="capacitat>50">
+                    <field name="name"/>
+                    <field name="matricula"/>
+                    <field name="capacitat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="examen.paquet">
+            <field name="name">Examen Pauqet List</field>
+            <field name="model">examen.paquet</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="volum"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="examen.viatge">
+            <field name="name">Examen Viatge List</field>
+            <field name="model">examen.viatge</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="paquets"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Formularis -->
+
+        <record model="ir.ui.view" id="examen.furgoneta_form">
+            <field name="name">Examen Furgoneta Form</field>
+            <field name="model">examen.furgoneta</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="foto" widget="image"/>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="matricula"/>
+                            </group>
+                            <group>
+                                <field name="capacitat"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Paquets">
+                                <field name="paquets"/>
+                            </page>
+                            <page string="Viatges">
+                                <field name="viatges"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search -->
+
+         <record model="ir.ui.view" id="examen.viatge_search">
+            <field name="name">Examen Viatge Search</field>
+            <field name="model">examen.viatge</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="id"/>
+                    <filter name="group_by_furgoneta" string="Group by Furgoneta" context="{'group_by': 'furgoneta'}"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="examen.action_furgoneta_window">
+            <field name="name">Examen Furgoneta window</field>
+            <field name="res_model">examen.furgoneta</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="examen.action_paquet_window">
+            <field name="name">Examen Paquet window</field>
+            <field name="res_model">examen.paquet</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="examen.action_viatge_window">
+            <field name="name">Examen Viatge window</field>
+            <field name="res_model">examen.viatge</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+        <!-- No se tocaa
+            <record model="ir.actions.server" id="examen.action_server">
+              <field name="name">Examen server</field>
+              <field name="model_id" ref="model_examen_examen"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+
+        <menuitem name="MRW" id="examen.menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Management" id="examen.menu_1" parent="examen.menu_root"/>
+
+
+        <!-- actions -->
+
+        <menuitem name="Furgonetes" id="examen.menu_furgoneta_list" parent="examen.menu_1"
+                  action="examen.action_furgoneta_window"/>
+        <menuitem name="Paquets" id="examen.menu_paquet_list" parent="examen.menu_1"
+                  action="examen.action_paquet_window"/>
+         <menuitem name="Viatges" id="examen.menu_viatge_list" parent="examen.menu_1"
+                  action="examen.action_viatge_window"/>
+
+    </data>
+</odoo>

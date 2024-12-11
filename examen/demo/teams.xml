@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record id='team_AstonMartin' model='examen.team'>
+            <field name='name'>Aston Martin</field>
+            <field name='country'>EEUU</field>
+        </record>
+        <record id='team_RedBull' model='examen.team'>
+            <field name='name'>Red Bull</field>
+            <field name='country'>Sweden</field>
+        </record>
+        <record id='team_Ferrari' model='examen.team'>
+            <field name='name'>Ferrari</field>
+            <field name='country'>Italy</field>
+        </record>
+        <record id='team_MClaren' model='examen.team'>
+            <field name='name'>MClaren</field>
+            <field name='country'>France</field>
+        </record>
+    </data>
+</odoo>

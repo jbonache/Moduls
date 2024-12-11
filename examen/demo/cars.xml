@@ -1,0 +1,304 @@
+<odoo>
+    <data>
+        <record id='car_kioqmb' model='examen.car'>
+            <field name='name'>kioqmb</field>
+            <field name='escuderia'>hqhzrhsivu</field>
+            <field name='number'>66</field>
+            <field name='velocitat_punta'>288.37</field>
+        </record>
+        <record id='car_hvoitb' model='examen.car'>
+            <field name='name'>hvoitb</field>
+            <field name='escuderia'>bwhvvtdmar</field>
+            <field name='number'>38</field>
+            <field name='velocitat_punta'>346.44</field>
+        </record>
+        <record id='car_bgthko' model='examen.car'>
+            <field name='name'>bgthko</field>
+            <field name='escuderia'>celkpwyjth</field>
+            <field name='number'>23</field>
+            <field name='velocitat_punta'>293.47</field>
+        </record>
+        <record id='car_zdapzw' model='examen.car'>
+            <field name='name'>zdapzw</field>
+            <field name='escuderia'>aebiyznigj</field>
+            <field name='number'>40</field>
+            <field name='velocitat_punta'>358.51</field>
+        </record>
+        <record id='car_lhxupi' model='examen.car'>
+            <field name='name'>lhxupi</field>
+            <field name='escuderia'>nwbmicfhma</field>
+            <field name='number'>82</field>
+            <field name='velocitat_punta'>305.02</field>
+        </record>
+        <record id='car_nfeqlq' model='examen.car'>
+            <field name='name'>nfeqlq</field>
+            <field name='escuderia'>yiowfflfnd</field>
+            <field name='number'>63</field>
+            <field name='velocitat_punta'>317.77</field>
+        </record>
+        <record id='car_borcnv' model='examen.car'>
+            <field name='name'>borcnv</field>
+            <field name='escuderia'>vqvenzcpsy</field>
+            <field name='number'>56</field>
+            <field name='velocitat_punta'>325.72</field>
+        </record>
+        <record id='car_wgfuay' model='examen.car'>
+            <field name='name'>wgfuay</field>
+            <field name='escuderia'>elmbenqcvu</field>
+            <field name='number'>39</field>
+            <field name='velocitat_punta'>394.15</field>
+        </record>
+        <record id='car_mylfgj' model='examen.car'>
+            <field name='name'>mylfgj</field>
+            <field name='escuderia'>luazdfapsz</field>
+            <field name='number'>44</field>
+            <field name='velocitat_punta'>329.32</field>
+        </record>
+        <record id='car_firddo' model='examen.car'>
+            <field name='name'>firddo</field>
+            <field name='escuderia'>llyykwuqkc</field>
+            <field name='number'>56</field>
+            <field name='velocitat_punta'>265.11</field>
+        </record>
+        <record id='car_qywwsx' model='examen.car'>
+            <field name='name'>qywwsx</field>
+            <field name='escuderia'>yeuxhwwjvz</field>
+            <field name='number'>39</field>
+            <field name='velocitat_punta'>268.53</field>
+        </record>
+        <record id='car_bkpslf' model='examen.car'>
+            <field name='name'>bkpslf</field>
+            <field name='escuderia'>maihwfkezt</field>
+            <field name='number'>29</field>
+            <field name='velocitat_punta'>265.06</field>
+        </record>
+        <record id='car_lkhixf' model='examen.car'>
+            <field name='name'>lkhixf</field>
+            <field name='escuderia'>vzenlclfse</field>
+            <field name='number'>32</field>
+            <field name='velocitat_punta'>281.33</field>
+        </record>
+        <record id='car_hecjbf' model='examen.car'>
+            <field name='name'>hecjbf</field>
+            <field name='escuderia'>ibfjnvyhmu</field>
+            <field name='number'>40</field>
+            <field name='velocitat_punta'>276.11</field>
+        </record>
+        <record id='car_ofmcar' model='examen.car'>
+            <field name='name'>ofmcar</field>
+            <field name='escuderia'>sqvwpxftee</field>
+            <field name='number'>63</field>
+            <field name='velocitat_punta'>320.97</field>
+        </record>
+        <record id='car_ooflcb' model='examen.car'>
+            <field name='name'>ooflcb</field>
+            <field name='escuderia'>ygotgphuuw</field>
+            <field name='number'>44</field>
+            <field name='velocitat_punta'>337.89</field>
+        </record>
+        <record id='car_izauln' model='examen.car'>
+            <field name='name'>izauln</field>
+            <field name='escuderia'>riwhnmxeyo</field>
+            <field name='number'>40</field>
+            <field name='velocitat_punta'>341.82</field>
+        </record>
+        <record id='car_hvpwgf' model='examen.car'>
+            <field name='name'>hvpwgf</field>
+            <field name='escuderia'>iowhhentdf</field>
+            <field name='number'>7</field>
+            <field name='velocitat_punta'>263.33</field>
+        </record>
+        <record id='car_rzmyvt' model='examen.car'>
+            <field name='name'>rzmyvt</field>
+            <field name='escuderia'>vjpyqfvwhr</field>
+            <field name='number'>36</field>
+            <field name='velocitat_punta'>338.76</field>
+        </record>
+        <record id='car_wwwqdj' model='examen.car'>
+            <field name='name'>wwwqdj</field>
+            <field name='escuderia'>hethwwwkvc</field>
+            <field name='number'>46</field>
+            <field name='velocitat_punta'>286.39</field>
+        </record>
+        <record id='car_mvdfic' model='examen.car'>
+            <field name='name'>mvdfic</field>
+            <field name='escuderia'>pyhqlwqhfw</field>
+            <field name='number'>71</field>
+            <field name='velocitat_punta'>250.04</field>
+        </record>
+        <record id='car_wiwgzr' model='examen.car'>
+            <field name='name'>wiwgzr</field>
+            <field name='escuderia'>crknpxqhca</field>
+            <field name='number'>69</field>
+            <field name='velocitat_punta'>318.07</field>
+        </record>
+        <record id='car_ztmdqd' model='examen.car'>
+            <field name='name'>ztmdqd</field>
+            <field name='escuderia'>nxelvbhiux</field>
+            <field name='number'>10</field>
+            <field name='velocitat_punta'>292.24</field>
+        </record>
+        <record id='car_yhjowm' model='examen.car'>
+            <field name='name'>yhjowm</field>
+            <field name='escuderia'>gxcdfndyby</field>
+            <field name='number'>30</field>
+            <field name='velocitat_punta'>384.1</field>
+        </record>
+        <record id='car_kdmtgm' model='examen.car'>
+            <field name='name'>kdmtgm</field>
+            <field name='escuderia'>ckimyvlukj</field>
+            <field name='number'>25</field>
+            <field name='velocitat_punta'>381.19</field>
+        </record>
+        <record id='car_dpzgen' model='examen.car'>
+            <field name='name'>dpzgen</field>
+            <field name='escuderia'>jhogygpbjo</field>
+            <field name='number'>67</field>
+            <field name='velocitat_punta'>367.32</field>
+        </record>
+        <record id='car_egimtz' model='examen.car'>
+            <field name='name'>egimtz</field>
+            <field name='escuderia'>zgcnswmmba</field>
+            <field name='number'>46</field>
+            <field name='velocitat_punta'>369.69</field>
+        </record>
+        <record id='car_gvncfx' model='examen.car'>
+            <field name='name'>gvncfx</field>
+            <field name='escuderia'>hutxktitfj</field>
+            <field name='number'>2</field>
+            <field name='velocitat_punta'>307.24</field>
+        </record>
+        <record id='car_gkkkrz' model='examen.car'>
+            <field name='name'>gkkkrz</field>
+            <field name='escuderia'>biiznupyoj</field>
+            <field name='number'>60</field>
+            <field name='velocitat_punta'>328.86</field>
+        </record>
+        <record id='car_ppskkr' model='examen.car'>
+            <field name='name'>ppskkr</field>
+            <field name='escuderia'>eleswkerqq</field>
+            <field name='number'>12</field>
+            <field name='velocitat_punta'>368.83</field>
+        </record>
+        <record id='car_xspfuf' model='examen.car'>
+            <field name='name'>xspfuf</field>
+            <field name='escuderia'>gnczxeksjw</field>
+            <field name='number'>10</field>
+            <field name='velocitat_punta'>354.49</field>
+        </record>
+        <record id='car_ndwxyl' model='examen.car'>
+            <field name='name'>ndwxyl</field>
+            <field name='escuderia'>zymkieqtfk</field>
+            <field name='number'>41</field>
+            <field name='velocitat_punta'>289.47</field>
+        </record>
+        <record id='car_obiaam' model='examen.car'>
+            <field name='name'>obiaam</field>
+            <field name='escuderia'>lbyhdjbazd</field>
+            <field name='number'>45</field>
+            <field name='velocitat_punta'>371.86</field>
+        </record>
+        <record id='car_hkgmkw' model='examen.car'>
+            <field name='name'>hkgmkw</field>
+            <field name='escuderia'>zzhpkbkebc</field>
+            <field name='number'>62</field>
+            <field name='velocitat_punta'>392.34</field>
+        </record>
+        <record id='car_ojbdkk' model='examen.car'>
+            <field name='name'>ojbdkk</field>
+            <field name='escuderia'>wahixwlzsz</field>
+            <field name='number'>14</field>
+            <field name='velocitat_punta'>292.7</field>
+        </record>
+        <record id='car_ofeixk' model='examen.car'>
+            <field name='name'>ofeixk</field>
+            <field name='escuderia'>lozqfsades</field>
+            <field name='number'>31</field>
+            <field name='velocitat_punta'>255.91</field>
+        </record>
+        <record id='car_kwbntk' model='examen.car'>
+            <field name='name'>kwbntk</field>
+            <field name='escuderia'>czcppsqmmt</field>
+            <field name='number'>31</field>
+            <field name='velocitat_punta'>294.57</field>
+        </record>
+        <record id='car_okdbzk' model='examen.car'>
+            <field name='name'>okdbzk</field>
+            <field name='escuderia'>pipfeqayoi</field>
+            <field name='number'>5</field>
+            <field name='velocitat_punta'>378.3</field>
+        </record>
+        <record id='car_gxvbtk' model='examen.car'>
+            <field name='name'>gxvbtk</field>
+            <field name='escuderia'>kbevhcurre</field>
+            <field name='number'>89</field>
+            <field name='velocitat_punta'>253.39</field>
+        </record>
+        <record id='car_uedfid' model='examen.car'>
+            <field name='name'>uedfid</field>
+            <field name='escuderia'>wqirohochu</field>
+            <field name='number'>15</field>
+            <field name='velocitat_punta'>292.38</field>
+        </record>
+        <record id='car_zfjdbs' model='examen.car'>
+            <field name='name'>zfjdbs</field>
+            <field name='escuderia'>oafonznavc</field>
+            <field name='number'>49</field>
+            <field name='velocitat_punta'>329.01</field>
+        </record>
+        <record id='car_vuaxza' model='examen.car'>
+            <field name='name'>vuaxza</field>
+            <field name='escuderia'>hslcnndyvh</field>
+            <field name='number'>32</field>
+            <field name='velocitat_punta'>263.19</field>
+        </record>
+        <record id='car_vhtwmk' model='examen.car'>
+            <field name='name'>vhtwmk</field>
+            <field name='escuderia'>mbewqwpisq</field>
+            <field name='number'>86</field>
+            <field name='velocitat_punta'>344.57</field>
+        </record>
+        <record id='car_zsxrwk' model='examen.car'>
+            <field name='name'>zsxrwk</field>
+            <field name='escuderia'>hlvubidbgr</field>
+            <field name='number'>41</field>
+            <field name='velocitat_punta'>323.4</field>
+        </record>
+        <record id='car_tsfwrl' model='examen.car'>
+            <field name='name'>tsfwrl</field>
+            <field name='escuderia'>rjvxzwwmcq</field>
+            <field name='number'>43</field>
+            <field name='velocitat_punta'>384.98</field>
+        </record>
+        <record id='car_kserkp' model='examen.car'>
+            <field name='name'>kserkp</field>
+            <field name='escuderia'>mqjsptpmhp</field>
+            <field name='number'>22</field>
+            <field name='velocitat_punta'>350.8</field>
+        </record>
+        <record id='car_rluvmp' model='examen.car'>
+            <field name='name'>rluvmp</field>
+            <field name='escuderia'>atrunemoos</field>
+            <field name='number'>90</field>
+            <field name='velocitat_punta'>335.1</field>
+        </record>
+        <record id='car_tsgqdq' model='examen.car'>
+            <field name='name'>tsgqdq</field>
+            <field name='escuderia'>qvxglcpnrg</field>
+            <field name='number'>97</field>
+            <field name='velocitat_punta'>347.23</field>
+        </record>
+        <record id='car_oeqijk' model='examen.car'>
+            <field name='name'>oeqijk</field>
+            <field name='escuderia'>bsixxzauqt</field>
+            <field name='number'>35</field>
+            <field name='velocitat_punta'>350.11</field>
+        </record>
+        <record id='car_switkz' model='examen.car'>
+            <field name='name'>switkz</field>
+            <field name='escuderia'>xmtcselspv</field>
+            <field name='number'>91</field>
+            <field name='velocitat_punta'>289.55</field>
+        </record>
+    </data>
+</odoo>
