@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.nau_form">
+            <field name="name">GalacticTribals Nau form</field>
+            <field name="model">galactic_tribals.nau</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <separator string="Spaceship data"></separator>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="type"/>
+                                </group>
+                                <group>
+                                    <field name="firepower"/>
+                                </group>
+                            </group>
+                        </group>
+                        <separator string="Player driver"></separator>
+                        <group>
+                            <field name="player"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

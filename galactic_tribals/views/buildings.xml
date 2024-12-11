@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.construccio_form">
+            <field name="name">GalacticTribals Construccio form</field>
+            <field name="model">galactic_tribals.construccio</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <separator string="Building data"></separator>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="type"/>
+                                </group>
+                                <group>
+                                    <field name="status"/>
+                                </group>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="planeta"/>
+                        </group>
+                        <group>
+                            <field name="player"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

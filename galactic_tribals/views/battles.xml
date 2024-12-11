@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.batalla_form">
+            <field name="name">GalacticTribals Batalla form</field>
+            <field name="model">galactic_tribals.batalla</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <separator string="Battle data"></separator>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="date"/>
+                                </group>
+                                <group>
+                                    <field name="guanyador"/>
+                                </group>
+                            </group>
+                        </group>
+                         <notebook>
+                            <page string="Tribes in war">
+                                <field name="tribus"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

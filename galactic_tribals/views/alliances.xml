@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.alianza_form">
+            <field name="name">GalacticTribals Aliança form</field>
+            <field name="model">galactic_tribals.alianza</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <separator string="Alliance data"></separator>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="date"/>
+                                </group>
+                                <group>
+                                    <field name="status"/>
+                                </group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Tribes friendly">
+                                <field name="tribus"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

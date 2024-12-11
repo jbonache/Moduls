@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.tribu_form">
+            <field name="name">GalacticTribals Tribu form</field>
+            <field name="model">galactic_tribals.tribu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <separator string="Tribe data"></separator>
+                            <group>
+                                <field name="name"/>
+                                <field name="home_planet"/>
+                            </group>
+                            <group>
+                                <field name="ability"/>
+                                <field name="lider"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Players">
+                                <field name="players"></field>
+                            </page>
+                            <page string="Battles">
+                                <field name="batalles"></field>
+                            </page>
+                            <page string="Alliances">
+                                <field name="aliances"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

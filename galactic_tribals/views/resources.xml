@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.recurs_form">
+            <field name="name">GalacticTribals Recurs form</field>
+            <field name="model">galactic_tribals.recurs</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <separator string="Resource data"></separator>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="quantity"/>
+                                </group>
+                                <group>
+                                    <field name="type"/>
+                                </group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Planets available">
+                                <field name="planetas"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

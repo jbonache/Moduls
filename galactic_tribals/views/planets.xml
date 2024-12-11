@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="galactic_tribals.planeta_form">
+            <field name="name">GalacticTribals Planteta form</field>
+            <field name="model">galactic_tribals.planeta</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <separator string="Planet data"></separator>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="environment"/>
+                                </group>
+                                <group>
+                                    <field name="status"/>
+                                </group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Buildings">
+                                <field name="construccions"></field>
+                            </page>
+                            <page string="Resources availables">
+                                <field name="recursos"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

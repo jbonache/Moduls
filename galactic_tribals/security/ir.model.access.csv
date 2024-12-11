@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_galactic_tribals_player,galactic_tribals.player,model_galactic_tribals_player,base.group_user,1,1,1,1
+access_galactic_tribals_tribu,galactic_tribals.tribu,model_galactic_tribals_tribu,base.group_user,1,1,1,1
+access_galactic_tribals_planeta,galactic_tribals.planeta,model_galactic_tribals_planeta,base.group_user,1,1,1,1
+access_galactic_tribals_recurs,galactic_tribals.recurs,model_galactic_tribals_recurs,base.group_user,1,1,1,1
+access_galactic_tribals_construccio,galactic_tribals.construccio,model_galactic_tribals_construccio,base.group_user,1,1,1,1
+access_galactic_tribals_nau,galactic_tribals.nau,model_galactic_tribals_nau,base.group_user,1,1,1,1
+access_galactic_tribals_batalla,galactic_tribals.batalla,model_galactic_tribals_batalla,base.group_user,1,1,1,1
+access_galactic_tribals_alianza,galactic_tribals.alianza,model_galactic_tribals_alianza,base.group_user,1,1,1,1
