@@ -1,0 +1,13 @@
+<odoo>
+        <!-- Acción programada para registrar niveles de jugadores -->
+        <record model="ir.cron" id="ir_cron_record_player_levels" >
+            <field name="name">Registrar nivells dels jugadors</field>
+            <field name="model_id" ref="model_galactic_tribals_player"/>
+            <field name="state">code</field>
+            <field name="code">model.record_player_levels()</field>
+            <field name="interval_number">1</field> <!-- Frecuencia de ejecución -->
+            <field name="interval_type">minutes</field> <!-- Puede ser 'minutes', 'hours', 'days', etc. -->
+            <field name="numbercall">-1</field> <!-- Número de repeticiones (-1 = infinito) -->
+            <field name="doall">False</field> <!-- Ejecutar tareas atrasadas al reiniciar -->
+        </record>
+</odoo>

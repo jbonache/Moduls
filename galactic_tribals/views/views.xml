@@ -172,6 +172,7 @@
             <field name="name">GalacticTribals Player window</field>
             <field name="res_model">galactic_tribals.player</field>
             <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{'default_name': 'New Player'}</field>
         </record>
 
         <record model="ir.actions.act_window" id="galactic_tribals.action_tribu_window">

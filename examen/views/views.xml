@@ -10,6 +10,8 @@
                     <field name="name"/>
                     <field name="matricula"/>
                     <field name="capacitat"/>
+                    <field name="volum_disponible"/>
+
                 </tree>
             </field>
         </record>

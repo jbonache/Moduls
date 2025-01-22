@@ -46,11 +46,15 @@ class Player(models.Model):
     batalles = fields.Many2many('galactic_tribals.batalla', related='tribu.batalles', readonly=True)
     aliances = fields.Many2many('galactic_tribals.alianza', related='tribu.aliances', readonly=True)
 
+    player_progress = fields.One2many('galactic_tribals.player_progress', 'player' )
     # Funcions compute
     @api.depends('battle_points')
     def _get_level(self):
+        date = fields.datetime.now()
         for player in self:
             player.level = 1 + (player.battle_points // 100)
+            #registre en el model de player_progress
+            self.env['galactic_tribals.player_progress'].create({'name':player.level, 'player': player.id, 'date': date})
 
     # Constrains
     @api.constrains('email')
@@ -74,6 +78,19 @@ class Player(models.Model):
                     'type' : 'notification'
                 }
             }
+
+    @api.model
+    def record_player_levels(self):
+        """
+        Registra los level actuales de todos los jugadores. Se ejecutará por un cron cada minuto
+        """
+        players = self.search([])
+        for player in players:
+            self.env['galactic_tribals.player_progress'].create({
+                'name': f"Progrés de {player.name}",
+                'player': player.id,
+                'date': fields.Date.today(),
+            })
 
 class Tribu(models.Model):
     _name = 'galactic_tribals.tribu'
@@ -188,9 +205,16 @@ class Batalla(models.Model):
                               column2='tribu_id',
                               column1='batalla_id')
 
+    players = fields.Many2many(comodel_name='galactic_tribals.player',
+                               relation='players_batalles',
+                               column1='batalla_id',
+                               column2='player_id')
+
     # Fields relationals
-    guanyador = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='El guanyador de la batalla', readonly=True,
-                                compute='_get_resultat', store=True)
+    #guanyador = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='El guanyador de la batalla', readonly=True,
+    #                            compute='_get_resultat', store=True)
+
+    guanyador = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='El guanyador de la batalla', readonly=True)
 
     # Constrains
     _sql_constraints = [('nom_unic', 'unique(name)', 'Ja existeix una batalla amb eixe mateix nom.')]
@@ -202,6 +226,38 @@ class Batalla(models.Model):
             bat = [b.tribus[0], b.tribus[1]]
             b.guanyador = bat[numero]
 
+    def update_progress(self):
+        """
+        Incrementa el progrés de la batalla de 0 a 100.
+        Quan arriba al 100, determina el guanyador.
+        Finalment es desvinculen els jugadors de la relació en la batalla sense eliminar-los de players, clar.
+        """
+        for batalla in self:
+            if batalla.progress < 100:
+                batalla.progress += 10  # Incrementa el progrés en 10
+
+            if batalla.progress >= 100:
+                batalla.progress = 100
+
+                if len(batalla.tribus) >= 2:
+                    # Determina aleatòriament el guanyador entre les tribus participants.
+                    batalla.guanyador = random.choice(batalla.tribus.ids)
+                else:
+                    batalla.guanyador = False  # No hi ha prou tribus per determinar un guanyador.
+
+                # Desvincula els jugadors de la batalla
+                batalla.players.write({'batalles': [(3, batalla.id)]})
+
+    @api.model
+    def simulate_battle(self, batalla_id):
+        batalla = self.browse(batalla_id)
+        while batalla.progress < 100:
+            batalla.update_progress()
+
+        return {
+            'name': batalla.name,
+            'winner': batalla.guanyador.name if batalla.guanyador else 'No hi ha guanyador',
+        }
 
 class Alianza(models.Model):
     _name = 'galactic_tribals.alianza'
@@ -219,3 +275,17 @@ class Alianza(models.Model):
 
     # Constrains
     _sql_constraints = [('nom_unic', 'unique(name)', 'Ja existeix una aliança amb eixe mateix nom.')]
+
+class Player_progress(models.Model):
+    _name = 'galactic_tribals.player_progress'
+    _description = 'Player Progress Model'
+
+    name = fields.Char(string='Nom', required=True)
+    date = fields.Char(string='Data', default= lambda d : fields.datetime.now())
+
+    player = fields.Many2one(
+        comodel_name='galactic_tribals.player',
+        string='Player',
+        ondelete='cascade',
+        required=True
+    )
