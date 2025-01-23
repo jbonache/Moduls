@@ -197,6 +197,7 @@ class Batalla(models.Model):
 
     name = fields.Char(string='Nom', required=True)
     date = fields.Date(string='Data', required=True)
+    progress = fields.Integer(string='Progres de la lluita', default=0)
     #guanyador = fields.Char(string='Guanyador', required=True)
 
     # Fields per a les Relacions
@@ -247,6 +248,53 @@ class Batalla(models.Model):
 
                 # Desvincula els jugadors de la batalla
                 batalla.players.write({'batalles': [(3, batalla.id)]})
+
+    # Creará una nueva batalla entre 2 tribus aleatorias y invocará a la funcion que simula el progreso de la
+    # batalla y determina un ganador
+
+    def create_random_battle(self):
+        # Seleccionar dos tribus aleatorias
+        tribus = self.env['galactic_tribals.tribu'].search([])
+        if len(tribus) < 2:
+            raise ValidationError("No hay suficientes tribus para generar una batalla.")
+
+        tribu1, tribu2 = random.sample(tribus, 2)
+
+        # Crear el registro de batalla
+        nueva_batalla = self.create({
+            'name': f'Batalla entre {tribu1.name} y {tribu2.name}',
+            'date': fields.Date.today(),
+            'tribus': [(6, 0, [tribu1.id, tribu2.id])],
+        })
+
+        # Simular la batalla
+        self.simulate_battle(nueva_batalla.id)
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'reload',
+        }
+    #falla
+    @api.model
+    def create_random_battle_KK(self):
+        # Seleccionar dos tribus aleatorias
+        tribus = self.env['galactic_tribals.tribu'].search([])
+        if len(tribus) < 2:
+            raise ValidationError("No hay suficientes tribus para generar una batalla.")
+
+        tribu1, tribu2 = random.sample(tribus, 2)
+
+        # Crear el registro de batalla
+        nueva_batalla = self.create({
+            'name': f'Batalla entre {tribu1.name} y {tribu2.name}',
+            'date': fields.Date.today(),
+            'tribus': [(6, 0, [tribu1.id, tribu2.id])],
+        })
+
+        # Simular la batalla
+        self.simulate_battle(nueva_batalla.id)
+        return True
+        #return nueva_batalla
 
     @api.model
     def simulate_battle(self, batalla_id):

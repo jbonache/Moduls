@@ -84,8 +84,10 @@
             <field name="model">galactic_tribals.batalla</field>
             <field name="arch" type="xml">
                 <tree>
+                    <button name="create_random_battle" type="object" string="Generar Batalla Aleatoria" class="btn-primary"/>
                     <field name="name"/>
                     <field name="date"/>
+                    <field name="progress"/>
                     <field name="guanyador"/>
                 </tree>
             </field>

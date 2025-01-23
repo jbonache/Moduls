@@ -6,7 +6,6 @@
             <field name="model">galactic_tribals.batalla</field>
             <field name="arch" type="xml">
                 <form>
-
                     <sheet>
                         <separator string="Battle data"></separator>
                         <group>
@@ -16,13 +15,14 @@
                             <group>
                                 <group>
                                     <field name="date"/>
+                                    <field name="progress"/>
                                 </group>
                                 <group>
                                     <field name="guanyador"/>
                                 </group>
                             </group>
                         </group>
-                         <notebook>
+                        <notebook>
                             <page string="Tribes in war">
                                 <field name="tribus"></field>
                             </page>

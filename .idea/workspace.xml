@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec510b3-474a-4fb3-ae2e-30f853e83526" name="Changes" comment="Repositori restaurat">
-      <change afterPath="$PROJECT_DIR$/galactic_tribals/crons/cron.xml" afterDir="false" />
+    <list default="true" id="8ec510b3-474a-4fb3-ae2e-30f853e83526" name="Changes" comment="Afegint crons i canvis 6a quinzena">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examen/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/examen/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examen/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examen/views/views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galactic_tribals/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galactic_tribals/crons/cron.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/crons/cron.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/galactic_tribals/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galactic_tribals/views/battles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/views/battles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/galactic_tribals/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/views/views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +160,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733913826554</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Repositori restaurat">
+      <option name="closed" value="true" />
+      <created>1737556200926</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737556200926</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Afegint crons i canvis 6a quinzena">
+      <option name="closed" value="true" />
+      <created>1737556364215</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737556364216</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,6 +187,7 @@
     <MESSAGE value="commit 2" />
     <MESSAGE value="Inici" />
     <MESSAGE value="Repositori restaurat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Repositori restaurat" />
+    <MESSAGE value="Afegint crons i canvis 6a quinzena" />
+    <option name="LAST_COMMIT_MESSAGE" value="Afegint crons i canvis 6a quinzena" />
   </component>
 </project>
