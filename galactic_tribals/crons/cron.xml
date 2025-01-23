@@ -10,4 +10,17 @@
             <field name="numbercall">-1</field> <!-- Número de repeticiones (-1 = infinito) -->
             <field name="doall">False</field> <!-- Ejecutar tareas atrasadas al reiniciar -->
         </record>
+
+        <!-- Cron job que ejecuta la simulación cada 1 minuto -->
+        <record model="ir.cron" id="ir_cron_simulate_battle" >
+            <field name="name">Simular batallas cada 30 segundos</field>
+            <field name="model_id" ref="model_galactic_tribals_batalla"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_simulate_battle()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+        </record>
+
 </odoo>

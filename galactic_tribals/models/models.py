@@ -5,6 +5,7 @@ from odoo import models, fields, api
 from datetime import datetime
 from odoo.exceptions import ValidationError
 import random
+import time
 import re
 from odoo.modules.module import get_module_resource
 import base64
@@ -235,7 +236,8 @@ class Batalla(models.Model):
         """
         for batalla in self:
             if batalla.progress < 100:
-                batalla.progress += 10  # Incrementa el progrés en 10
+                p = random.randint(5,25)
+                batalla.progress += p  # Incrementa el progrés en p
 
             if batalla.progress >= 100:
                 batalla.progress = 100
@@ -268,44 +270,30 @@ class Batalla(models.Model):
         })
 
         # Simular la batalla
-        self.simulate_battle(nueva_batalla.id)
+        # self.simulate_battle(nueva_batalla.id)
 
         return {
             'type': 'ir.actions.client',
             'tag': 'reload',
         }
-    #falla
-    @api.model
-    def create_random_battle_KK(self):
-        # Seleccionar dos tribus aleatorias
-        tribus = self.env['galactic_tribals.tribu'].search([])
-        if len(tribus) < 2:
-            raise ValidationError("No hay suficientes tribus para generar una batalla.")
 
-        tribu1, tribu2 = random.sample(tribus, 2)
-
-        # Crear el registro de batalla
-        nueva_batalla = self.create({
-            'name': f'Batalla entre {tribu1.name} y {tribu2.name}',
-            'date': fields.Date.today(),
-            'tribus': [(6, 0, [tribu1.id, tribu2.id])],
-        })
-
-        # Simular la batalla
-        self.simulate_battle(nueva_batalla.id)
-        return True
-        #return nueva_batalla
-
-    @api.model
     def simulate_battle(self, batalla_id):
         batalla = self.browse(batalla_id)
-        while batalla.progress < 100:
-            batalla.update_progress()
+        #while batalla.progress < 100:
+        batalla.update_progress()
 
         return {
             'name': batalla.name,
             'winner': batalla.guanyador.name if batalla.guanyador else 'No hi ha guanyador',
         }
+
+    # Metode que será cridat pel cron
+    @api.model
+    def cron_simulate_battle(self):
+        # Buscar batallas que aún no han sido simuladas (o según tu lógica)
+        batallas_pendientes = self.search([('progress', '<', '100')])
+        for batalla in batallas_pendientes:
+            self.simulate_battle(batalla.id)
 
 class Alianza(models.Model):
     _name = 'galactic_tribals.alianza'
