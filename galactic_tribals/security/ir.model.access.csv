@@ -7,3 +7,5 @@ access_galactic_tribals_construccio,galactic_tribals.construccio,model_galactic_
 access_galactic_tribals_nau,galactic_tribals.nau,model_galactic_tribals_nau,base.group_user,1,1,1,1
 access_galactic_tribals_batalla,galactic_tribals.batalla,model_galactic_tribals_batalla,base.group_user,1,1,1,1
 access_galactic_tribals_alianza,galactic_tribals.alianza,model_galactic_tribals_alianza,base.group_user,1,1,1,1
+
+access_player_progress_points,access_player_progress_points,model_galactic_tribals_player_progress_points,,1,1,1,1

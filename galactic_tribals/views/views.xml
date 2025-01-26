@@ -168,6 +168,20 @@
                 </kanban>
             </field>
         </record>
+
+        <!-- Vistes Graph -->
+        <record model="ir.ui.view" id="galactic_tribals.player_progress_points_graph">
+            <field name="name">GalacticTribals Player Progress Graph</field>
+            <field name="model">galactic_tribals.player_progress_points</field>
+            <field name="arch" type="xml">
+                <graph string="Player_Progress" type="line">
+                    <field name="date" type="row"/>
+                    <field name="player" type="col"/>
+                    <field name="points" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
         <!-- actions opening views on models -->
 
         <record model="ir.actions.act_window" id="galactic_tribals.action_player_window">
@@ -219,6 +233,13 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record model="ir.actions.act_window" id="galactic_tribals.action_player_progress_points_graph">
+            <field name="name">GalacticTribals Player Progress Graph</field>
+            <field name="res_model">galactic_tribals.player_progress_points</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="galactic_tribals.player_progress_points_graph"/>
+        </record>
+
 
         <!-- server action to the one above -->
         <!--
@@ -242,6 +263,9 @@
 
         <!-- menu categories -->
         <menuitem name="Management" id="galactic_tribals.menu_1" parent="galactic_tribals.menu_root"/>
+
+        <!-- menu categories -->
+        <menuitem name="Statistics" id="galactic_tribals.menu_2" parent="galactic_tribals.menu_root"/>
 
         <!-- actions -->
         <menuitem name="Players" id="galactic_tribals.menu_player_list" parent="galactic_tribals.menu_1"
@@ -267,6 +291,10 @@
 
         <menuitem name="Alliances" id="galactic_tribals.menu_alianza_list" parent="galactic_tribals.menu_1"
                   action="galactic_tribals.action_alianza_window"/>
+
+        <menuitem name="Player Progress Graph" id="galactic_tribals.menu_player_progress_points_graph" parent="galactic_tribals.menu_2"
+          action="galactic_tribals.action_player_progress_points_graph"/>
+
 
     </data>
 </odoo>

@@ -1,11 +1,11 @@
 <odoo>
         <!-- Acción programada para registrar niveles de jugadores -->
-        <record model="ir.cron" id="ir_cron_record_player_levels" >
-            <field name="name">Registrar nivells dels jugadors</field>
+        <record model="ir.cron" id="ir_cron_record_player_points" >
+            <field name="name">Registrar punts dels jugadors</field>
             <field name="model_id" ref="model_galactic_tribals_player"/>
             <field name="state">code</field>
-            <field name="code">model.record_player_levels()</field>
-            <field name="interval_number">10</field> <!-- Frecuencia de ejecución -->
+            <field name="code">model.record_player_points()</field>
+            <field name="interval_number">1</field> <!-- Frecuencia de ejecución -->
             <field name="interval_type">minutes</field> <!-- Puede ser 'minutes', 'hours', 'days', etc. -->
             <field name="numbercall">-1</field> <!-- Número de repeticiones (-1 = infinito) -->
             <field name="doall">False</field> <!-- Ejecutar tareas atrasadas al reiniciar -->
@@ -13,7 +13,7 @@
 
         <!-- Cron job que ejecuta la simulación cada 1 minuto -->
         <record model="ir.cron" id="ir_cron_simulate_battle" >
-            <field name="name">Simular batallas cada 30 segundos</field>
+            <field name="name">Simular progreso de las batallas</field>
             <field name="model_id" ref="model_galactic_tribals_batalla"/>
             <field name="state">code</field>
             <field name="code">model.cron_simulate_battle()</field>

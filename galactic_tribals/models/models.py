@@ -47,15 +47,15 @@ class Player(models.Model):
     batalles = fields.Many2many('galactic_tribals.batalla', related='tribu.batalles', readonly=True)
     aliances = fields.Many2many('galactic_tribals.alianza', related='tribu.aliances', readonly=True)
 
-    player_progress = fields.One2many('galactic_tribals.player_progress', 'player' )
+    player_progress = fields.One2many('galactic_tribals.player_progress_points', 'player' )
     # Funcions compute
     @api.depends('battle_points')
     def _get_level(self):
         date = fields.datetime.now()
         for player in self:
             player.level = 1 + (player.battle_points // 100)
-            #registre en el model de player_progress
-            self.env['galactic_tribals.player_progress'].create({'name':player.level, 'player': player.id, 'date': date})
+            #registre en el model de player_progress_points
+            #self.env['galactic_tribals.player_progress_points'].create({'name':player.level, 'player': player.id, 'date': date})
 
     # Constrains
     @api.constrains('email')
@@ -81,16 +81,17 @@ class Player(models.Model):
             }
 
     @api.model
-    def record_player_levels(self):
+    def record_player_points(self):
         """
-        Registra los level actuales de todos los jugadores. Se ejecutará por un cron cada minuto
+        Registra los puntos actuales de todos los jugadores. Se ejecutará por un cron cada minuto
         """
         players = self.search([])
         for player in players:
-            self.env['galactic_tribals.player_progress'].create({
+            self.env['galactic_tribals.player_progress_points'].create({
                 'name': f"Progrés de {player.name}",
                 'player': player.id,
-                'date': fields.Date.today(),
+                'points': player.battle_points,
+                'date': str(fields.Date.today()),
             })
 
 class Tribu(models.Model):
@@ -216,7 +217,11 @@ class Batalla(models.Model):
     #guanyador = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='El guanyador de la batalla', readonly=True,
     #                            compute='_get_resultat', store=True)
 
-    guanyador = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='El guanyador de la batalla', readonly=True)
+
+    atacant = fields.Many2one('galactic_tribals.tribu', ondelete='cascade', help='La tribu atacant', required=True)
+    defensor = fields.Many2one('galactic_tribals.tribu', ondelete='cascade', help='La tribu defensora', required=True)
+    guanyador = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='La tribu guanyadora de la batalla', readonly=True)
+    perdedor = fields.Many2one('galactic_tribals.tribu', ondelete='set null', help='La tribu perdedora', readonly=True)
 
     # Constrains
     _sql_constraints = [('nom_unic', 'unique(name)', 'Ja existeix una batalla amb eixe mateix nom.')]
@@ -236,17 +241,38 @@ class Batalla(models.Model):
         """
         for batalla in self:
             if batalla.progress < 100:
-                p = random.randint(5,25)
+                p = random.randint(25,100)
                 batalla.progress += p  # Incrementa el progrés en p
 
             if batalla.progress >= 100:
                 batalla.progress = 100
 
-                if len(batalla.tribus) >= 2:
-                    # Determina aleatòriament el guanyador entre les tribus participants.
-                    batalla.guanyador = random.choice(batalla.tribus.ids)
-                else:
-                    batalla.guanyador = False  # No hi ha prou tribus per determinar un guanyador.
+                if batalla.atacant and batalla.defensor:
+                    # Determina aleatòriament el guanyador entre les tribus atacant i defensora.
+                    t = random.randint(1,2)
+                    if t == 1:
+                        batalla.guanyador = batalla.atacant
+                        batalla.perdedor = batalla.defensor
+                    else:
+                        batalla.guanyador = batalla.defensor
+                        batalla.perdedor = batalla.atacant
+
+                if batalla.guanyador and batalla.perdedor:
+                    # Actualizamos los puntos de batalla solo para jugadores vivos (isActive)
+                    active_players_winner = batalla.guanyador.players.filtered(lambda player: player.isActive)
+                    active_players_loser = batalla.perdedor.players.filtered(lambda player: player.isActive)
+
+                    # Sumar 50 puntos a los jugadores activos de la tribu ganadora
+                    active_players_winner.mapped(
+                        lambda player: player.write({'battle_points': player.battle_points + 50}))
+
+                    # Restar 20 puntos a los jugadores activos de la tribu perdedora
+                    active_players_loser.mapped(
+                        lambda player: player.write({'battle_points': max(0, player.battle_points - 20)}))
+
+                    # Desactivar jugadores con battle_points = 0
+                    (active_players_winner + active_players_loser).filtered(
+                        lambda player: player.battle_points == 0).write({'isActive': False})
 
                 # Desvincula els jugadors de la batalla
                 batalla.players.write({'batalles': [(3, batalla.id)]})
@@ -267,6 +293,8 @@ class Batalla(models.Model):
             'name': f'Batalla entre {tribu1.name} y {tribu2.name}',
             'date': fields.Date.today(),
             'tribus': [(6, 0, [tribu1.id, tribu2.id])],
+            'atacant': tribu1.id,
+            'defensor': tribu2.id,
         })
 
         # Simular la batalla
@@ -312,11 +340,12 @@ class Alianza(models.Model):
     # Constrains
     _sql_constraints = [('nom_unic', 'unique(name)', 'Ja existeix una aliança amb eixe mateix nom.')]
 
-class Player_progress(models.Model):
-    _name = 'galactic_tribals.player_progress'
+class Player_progress_points(models.Model):
+    _name = 'galactic_tribals.player_progress_points'
     _description = 'Player Progress Model'
 
     name = fields.Char(string='Nom', required=True)
+    points = fields.Integer(string='battle_points')
     date = fields.Char(string='Data', default= lambda d : fields.datetime.now())
 
     player = fields.Many2one(
