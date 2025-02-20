@@ -83,7 +83,7 @@
             <field name="name">GalacticTribals Batalla list</field>
             <field name="model">galactic_tribals.batalla</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree banner_route="/galactic_tribals/battles">
                     <button name="create_random_battle" type="object" string="Generar Batalla Aleatoria" class="btn-primary"/>
                     <field name="name"/>
                     <field name="date"/>
@@ -92,6 +92,7 @@
                 </tree>
             </field>
         </record>
+
 
         <record model="ir.ui.view" id="galactic_tribals.alianza_list">
             <field name="name">GalacticTribals Aliança list</field>
@@ -106,7 +107,7 @@
         </record>
 
         <!-- Search -->
-         <record model="ir.ui.view" id="galactic_tribals.player_search">
+        <record model="ir.ui.view" id="galactic_tribals.player_search">
             <field name="name">GalacticTribals Player search</field>
             <field name="model">galactic_tribals.player</field>
             <field name="arch" type="xml">
@@ -115,7 +116,8 @@
                     <field name="email"/>
                     <field name="level"/>
                     <field name="level" string="Minium level" filter_domain="[('level','>=',self)]"/>
-                    <filter name="less_500" string="Less or equal than 500 points" domain="[('battle_points','&lt;=',500)]"/>
+                    <filter name="less_500" string="Less or equal than 500 points"
+                            domain="[('battle_points','&lt;=',500)]"/>
                     <filter name="more_500" string="More than 500 points" domain="[('battle_points','>',500)]"/>
                     <filter name="group_by_tribe" string="Group by Tribe" context="{'group_by': 'tribu'}"/>
                 </search>
@@ -227,6 +229,15 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <!-- actions para lanzar el wizard de generador de batallas -->
+        <record id="action_wizard_generar_batalla" model="ir.actions.act_window">
+            <field name="name">Generar Batalla</field>
+            <field name="res_model">galactic_tribals.wizard_generar_batalla</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
         <record model="ir.actions.act_window" id="galactic_tribals.action_alianza_window">
             <field name="name">GalacticTribals Aliança window</field>
             <field name="res_model">galactic_tribals.alianza</field>
@@ -292,8 +303,9 @@
         <menuitem name="Alliances" id="galactic_tribals.menu_alianza_list" parent="galactic_tribals.menu_1"
                   action="galactic_tribals.action_alianza_window"/>
 
-        <menuitem name="Player Progress Graph" id="galactic_tribals.menu_player_progress_points_graph" parent="galactic_tribals.menu_2"
-          action="galactic_tribals.action_player_progress_points_graph"/>
+        <menuitem name="Player Progress Graph" id="galactic_tribals.menu_player_progress_points_graph"
+                  parent="galactic_tribals.menu_2"
+                  action="galactic_tribals.action_player_progress_points_graph"/>
 
 
     </data>

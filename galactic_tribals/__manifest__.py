@@ -34,6 +34,7 @@ Long description of module's purpose
         'views/spaceships.xml',
         'views/battles.xml',
         'views/alliances.xml',
+        'wizards/viewGenerarBatalla.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

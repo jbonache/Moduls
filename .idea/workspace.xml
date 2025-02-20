@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec510b3-474a-4fb3-ae2e-30f853e83526" name="Changes" comment="Afegint crons (progres de batalles i progres de nivell de players), afegir boto per a crear batalles aleatòries i altres canvis 6a quinzena">
+    <list default="true" id="8ec510b3-474a-4fb3-ae2e-30f853e83526" name="Changes" comment="Vista graph per a mostrar el progres dels players pels battle points. Tb he afegit filtered per a sols actualitzar players vius després del resultat d'una batalla.">
+      <change afterPath="$PROJECT_DIR$/galactic_tribals/wizards/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/galactic_tribals/wizards/generarBatalla.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/galactic_tribals/wizards/generarBatallaTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/galactic_tribals/wizards/viewGenerarBatalla.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galactic_tribals/crons/cron.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/crons/cron.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galactic_tribals/crons/crondos.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/galactic_tribals/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galactic_tribals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galactic_tribals/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galactic_tribals/controllers/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/controllers/controllers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/galactic_tribals/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galactic_tribals/views/battles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/views/battles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galactic_tribals/views/players.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/views/players.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/galactic_tribals/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/galactic_tribals/views/views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,12 +57,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/run/user/1000/gvfs/sftp:host=127.0.0.1,port=2222,user=odoo/var/lib/odoo/modules/galactic_tribals/crons&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/run/user/1000/gvfs/sftp:host=127.0.0.1,port=2222,user=odoo/var/lib/odoo/modules/galactic_tribals/wizards&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/galactic_tribals/wizards" />
       <recent name="$PROJECT_DIR$/galactic_tribals/crons" />
     </key>
   </component>
@@ -209,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737639220962</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Vista graph per a mostrar el progres dels players pels battle points. Tb he afegit filtered per a sols actualitzar players vius després del resultat d'una batalla.">
+      <option name="closed" value="true" />
+      <created>1737897557972</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1737897557972</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -222,6 +240,7 @@
     <MESSAGE value="Repositori restaurat" />
     <MESSAGE value="Afegint crons i canvis 6a quinzena" />
     <MESSAGE value="Afegint crons (progres de batalles i progres de nivell de players), afegir boto per a crear batalles aleatòries i altres canvis 6a quinzena" />
-    <option name="LAST_COMMIT_MESSAGE" value="Afegint crons (progres de batalles i progres de nivell de players), afegir boto per a crear batalles aleatòries i altres canvis 6a quinzena" />
+    <MESSAGE value="Vista graph per a mostrar el progres dels players pels battle points. Tb he afegit filtered per a sols actualitzar players vius després del resultat d'una batalla." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vista graph per a mostrar el progres dels players pels battle points. Tb he afegit filtered per a sols actualitzar players vius després del resultat d'una batalla." />
   </component>
 </project>

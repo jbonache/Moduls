@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_wizard_generar_batalla" model="ir.ui.view">
+        <field name="name">Form wizard generar batalla </field>
+        <field name="model">galactic_tribals.wizard_generar_batalla</field>
+        <field name="arch" type="xml">
+            <form string="Generar Batalla">
+                <group>
+                    <field name="name"/>
+                    <field name="atacant_id"/>
+                    <field name="defensor_id"/>
+                    <field name="date"/>
+                </group>
+                <footer>
+                    <button name="generar_batalla" type="object" string="Generar" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_generar_batalla" model="ir.actions.act_window">
+        <field name="name">Generar Batalla</field>
+        <field name="res_model">galactic_tribals.wizard_generar_batalla</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wizard_generar_batalla"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
